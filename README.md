@@ -1,0 +1,1 @@
+# delphi-geser-posisi-form-2-sesuai-koordinat
