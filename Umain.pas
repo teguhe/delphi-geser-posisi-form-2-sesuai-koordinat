@@ -3,8 +3,13 @@ unit Umain;
 interface
 
 uses
+
+  //additional
+  System.Net.HttpClient, Vcl.ExtCtrls, Vcl.Imaging.jpeg,
+
+
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, AdvBadge, AdvGlowButton;
 
 type
   TForm1 = class(TForm)
@@ -21,10 +26,21 @@ type
     edHeight: TEdit;
     Label7: TLabel;
     cbMonitor: TComboBox;
-    Button1: TButton;
     chkMex: TCheckBox;
+    Button1: TAdvGlowButton;
+    Button2: TAdvGlowButton;
+    Button3: TAdvGlowButton;
+    lbl1: TLabel;
+    lbl2: TLabel;
+    edPrefix: TEdit;
+    edText: TEdit;
+    img1: TImage;
+
+    procedure DownloadImageFromURL(const AURL: string; AImage: TImage);
+
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -43,6 +59,36 @@ uses
   U2;
 
 {$R *.dfm}
+
+procedure TForm1.DownloadImageFromURL(const AURL: string; AImage: TImage);
+var
+  HTTP: THTTPClient;
+  Response: IHTTPResponse;
+  MS: TMemoryStream;
+begin
+  HTTP := THTTPClient.Create;
+  MS := TMemoryStream.Create;
+  try
+    try
+      // Mengambil data dari URL
+      Response := HTTP.Get(AURL, MS);
+
+      if Response.StatusCode = 200 then
+      begin
+        MS.Position := 0; // Reset posisi stream ke awal
+        AImage.Picture.LoadFromStream(MS);
+      end
+      else
+        ShowMessage('Gagal mengambil gambar. Kode: ' + Response.StatusCode.ToString);
+    except
+      on E: Exception do
+        ShowMessage('Error: ' + E.Message);
+    end;
+  finally
+    MS.Free;
+    HTTP.Free;
+  end;
+end;
 
 procedure TForm1.Button1Click(Sender: TObject);
 var MonitorKedua: TMonitor;
@@ -103,6 +149,18 @@ begin
     Show;
 
   end;
+
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+begin
+
+  Button3.Caption     := edPrefix.Text;
+  Button3.Notes.Text  := edText.Text;
+
+  DownloadImageFromURL('http://localhost/aaa/index.php?input='+edPrefix.Text, Img1);
+
+  Button3.Picture:=img1.Picture;
 
 end;
 

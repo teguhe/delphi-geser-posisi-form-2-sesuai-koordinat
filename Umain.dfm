@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Test Form 2 Position by Script'
-  ClientHeight = 442
+  ClientHeight = 357
   ClientWidth = 628
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -33,32 +33,32 @@ object Form1: TForm1
     Caption = 'Border Style'
   end
   object Label3: TLabel
-    Left = 16
-    Top = 110
+    Left = 288
+    Top = 56
     Width = 20
     Height = 15
     Caption = 'Top'
     Visible = False
   end
   object Label4: TLabel
-    Left = 16
-    Top = 137
+    Left = 288
+    Top = 83
     Width = 20
     Height = 15
     Caption = 'Left'
     Visible = False
   end
   object Label5: TLabel
-    Left = 16
-    Top = 164
+    Left = 288
+    Top = 110
     Width = 32
     Height = 15
     Caption = 'Width'
     Visible = False
   end
   object Label6: TLabel
-    Left = 16
-    Top = 191
+    Left = 288
+    Top = 137
     Width = 36
     Height = 15
     Caption = 'Height'
@@ -70,6 +70,27 @@ object Form1: TForm1
     Width = 46
     Height = 15
     Caption = 'Show on'
+  end
+  object lbl1: TLabel
+    Left = 16
+    Top = 240
+    Width = 29
+    Height = 15
+    Caption = 'Prefix'
+  end
+  object lbl2: TLabel
+    Left = 16
+    Top = 267
+    Width = 23
+    Height = 15
+    Caption = 'Teks'
+  end
+  object img1: TImage
+    Left = 448
+    Top = 150
+    Width = 105
+    Height = 105
+    Stretch = True
   end
   object cbBorderStyle: TComboBox
     Left = 96
@@ -88,8 +109,8 @@ object Form1: TForm1
       'ToolWindow')
   end
   object edTop: TEdit
-    Left = 96
-    Top = 107
+    Left = 368
+    Top = 53
     Width = 40
     Height = 23
     NumbersOnly = True
@@ -98,8 +119,8 @@ object Form1: TForm1
     Visible = False
   end
   object edLeft: TEdit
-    Left = 96
-    Top = 134
+    Left = 368
+    Top = 80
     Width = 40
     Height = 23
     NumbersOnly = True
@@ -108,8 +129,8 @@ object Form1: TForm1
     Visible = False
   end
   object edWidth: TEdit
-    Left = 96
-    Top = 161
+    Left = 368
+    Top = 107
     Width = 40
     Height = 23
     NumbersOnly = True
@@ -118,8 +139,8 @@ object Form1: TForm1
     Visible = False
   end
   object edHeight: TEdit
-    Left = 96
-    Top = 188
+    Left = 368
+    Top = 134
     Width = 40
     Height = 23
     NumbersOnly = True
@@ -139,23 +160,167 @@ object Form1: TForm1
       'Monitor 1'
       'Monitor 2')
   end
-  object Button1: TButton
-    Left = 96
-    Top = 247
-    Width = 145
-    Height = 25
-    Caption = 'Show Form 2'
-    TabOrder = 6
-    OnClick = Button1Click
-  end
   object chkMex: TCheckBox
     Left = 96
-    Top = 217
+    Top = 114
     Width = 145
     Height = 17
     Caption = 'Maximize on Execute'
     Checked = True
     State = cbChecked
+    TabOrder = 6
+  end
+  object Button1: TAdvGlowButton
+    Left = 96
+    Top = 137
+    Width = 145
+    Height = 41
+    Caption = 'Show Form 2'
+    NotesFont.Charset = DEFAULT_CHARSET
+    NotesFont.Color = clWindowText
+    NotesFont.Height = -11
+    NotesFont.Name = 'Tahoma'
+    NotesFont.Style = []
+    Rounded = True
     TabOrder = 7
+    OnClick = Button1Click
+    Appearance.BorderColor = 13087391
+    Appearance.BorderColorHot = 5819121
+    Appearance.BorderColorDown = 3181250
+    Appearance.BorderColorChecked = 3181250
+    Appearance.Color = 16643823
+    Appearance.ColorTo = 15784647
+    Appearance.ColorChecked = 14285309
+    Appearance.ColorCheckedTo = 7131391
+    Appearance.ColorDisabled = 15921906
+    Appearance.ColorDisabledTo = 15921906
+    Appearance.ColorDown = 7131391
+    Appearance.ColorDownTo = 8122111
+    Appearance.ColorHot = 9102333
+    Appearance.ColorHotTo = 14285309
+    Appearance.ColorMirror = 15784647
+    Appearance.ColorMirrorTo = 15784647
+    Appearance.ColorMirrorHot = 14285309
+    Appearance.ColorMirrorHotTo = 9102333
+    Appearance.ColorMirrorDown = 8122111
+    Appearance.ColorMirrorDownTo = 7131391
+    Appearance.ColorMirrorChecked = 7131391
+    Appearance.ColorMirrorCheckedTo = 7131391
+    Appearance.ColorMirrorDisabled = 11974326
+    Appearance.ColorMirrorDisabledTo = 15921906
+    Appearance.GradientHot = ggVertical
+    Appearance.GradientMirrorHot = ggVertical
+    Appearance.GradientDown = ggVertical
+    Appearance.GradientMirrorDown = ggVertical
+    Appearance.GradientChecked = ggVertical
+    Appearance.TextColorDisabled = 13948116
+    UIStyle = tsOffice2010Blue
+  end
+  object Button2: TAdvGlowButton
+    Left = 96
+    Top = 296
+    Width = 145
+    Height = 49
+    Caption = 'Load Text and Image >>'
+    NotesFont.Charset = DEFAULT_CHARSET
+    NotesFont.Color = clWindowText
+    NotesFont.Height = -11
+    NotesFont.Name = 'Tahoma'
+    NotesFont.Style = []
+    Rounded = True
+    TabOrder = 8
+    OnClick = Button2Click
+    Appearance.BorderColor = 13087391
+    Appearance.BorderColorHot = 5819121
+    Appearance.BorderColorDown = 3181250
+    Appearance.BorderColorChecked = 3181250
+    Appearance.Color = 16643823
+    Appearance.ColorTo = 15784647
+    Appearance.ColorChecked = 14285309
+    Appearance.ColorCheckedTo = 7131391
+    Appearance.ColorDisabled = 15921906
+    Appearance.ColorDisabledTo = 15921906
+    Appearance.ColorDown = 7131391
+    Appearance.ColorDownTo = 8122111
+    Appearance.ColorHot = 9102333
+    Appearance.ColorHotTo = 14285309
+    Appearance.ColorMirror = 15784647
+    Appearance.ColorMirrorTo = 15784647
+    Appearance.ColorMirrorHot = 14285309
+    Appearance.ColorMirrorHotTo = 9102333
+    Appearance.ColorMirrorDown = 8122111
+    Appearance.ColorMirrorDownTo = 7131391
+    Appearance.ColorMirrorChecked = 7131391
+    Appearance.ColorMirrorCheckedTo = 7131391
+    Appearance.ColorMirrorDisabled = 11974326
+    Appearance.ColorMirrorDisabledTo = 15921906
+    Appearance.GradientHot = ggVertical
+    Appearance.GradientMirrorHot = ggVertical
+    Appearance.GradientDown = ggVertical
+    Appearance.GradientMirrorDown = ggVertical
+    Appearance.GradientChecked = ggVertical
+    Appearance.TextColorDisabled = 13948116
+    UIStyle = tsOffice2010Blue
+  end
+  object Button3: TAdvGlowButton
+    Left = 263
+    Top = 296
+    Width = 145
+    Height = 49
+    Caption = 'Button2'
+    NotesFont.Charset = DEFAULT_CHARSET
+    NotesFont.Color = clWindowText
+    NotesFont.Height = -11
+    NotesFont.Name = 'Tahoma'
+    NotesFont.Style = []
+    Rounded = True
+    TabOrder = 9
+    Appearance.BorderColor = 13087391
+    Appearance.BorderColorHot = 5819121
+    Appearance.BorderColorDown = 3181250
+    Appearance.BorderColorChecked = 3181250
+    Appearance.Color = 16643823
+    Appearance.ColorTo = 15784647
+    Appearance.ColorChecked = 14285309
+    Appearance.ColorCheckedTo = 7131391
+    Appearance.ColorDisabled = 15921906
+    Appearance.ColorDisabledTo = 15921906
+    Appearance.ColorDown = 7131391
+    Appearance.ColorDownTo = 8122111
+    Appearance.ColorHot = 9102333
+    Appearance.ColorHotTo = 14285309
+    Appearance.ColorMirror = 15784647
+    Appearance.ColorMirrorTo = 15784647
+    Appearance.ColorMirrorHot = 14285309
+    Appearance.ColorMirrorHotTo = 9102333
+    Appearance.ColorMirrorDown = 8122111
+    Appearance.ColorMirrorDownTo = 7131391
+    Appearance.ColorMirrorChecked = 7131391
+    Appearance.ColorMirrorCheckedTo = 7131391
+    Appearance.ColorMirrorDisabled = 11974326
+    Appearance.ColorMirrorDisabledTo = 15921906
+    Appearance.GradientHot = ggVertical
+    Appearance.GradientMirrorHot = ggVertical
+    Appearance.GradientDown = ggVertical
+    Appearance.GradientMirrorDown = ggVertical
+    Appearance.GradientChecked = ggVertical
+    Appearance.TextColorDisabled = 13948116
+    UIStyle = tsOffice2010Blue
+  end
+  object edPrefix: TEdit
+    Left = 96
+    Top = 237
+    Width = 33
+    Height = 23
+    TabOrder = 10
+    Text = 'DK'
+  end
+  object edText: TEdit
+    Left = 96
+    Top = 264
+    Width = 312
+    Height = 23
+    TabOrder = 11
+    Text = 'Diskominfo Salatiga'
   end
 end
