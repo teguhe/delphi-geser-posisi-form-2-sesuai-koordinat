@@ -6,6 +6,7 @@ uses
 
   //additional
   System.Net.HttpClient, Vcl.ExtCtrls, Vcl.Imaging.jpeg,
+  System.IOUtils, Vcl.Imaging.pnglang,
 
 
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
@@ -37,6 +38,8 @@ type
     img1: TImage;
 
     procedure DownloadImageFromURL(const AURL: string; AImage: TImage);
+    procedure SaveImageToFile(AImage: TImage; const AFileName: string);
+    procedure LoadImageToFile(AImage: TImage; const AFileName: string);
 
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
@@ -88,6 +91,52 @@ begin
     MS.Free;
     HTTP.Free;
   end;
+end;
+
+procedure TForm1.SaveImageToFile(AImage: TImage; const AFileName: string);
+var
+  AppPath, FolderPath, FullPath: string;
+begin
+  // 1. Mendapatkan path direktori aplikasi
+  AppPath := ExtractFilePath(ParamStr(0));
+
+  // 2. Menentukan path folder 'image'
+  FolderPath := TPath.Combine(AppPath, 'image');
+
+  // 3. Membuat folder 'image' jika belum ada
+  if not TDirectory.Exists(FolderPath) then
+    TDirectory.CreateDirectory(FolderPath);
+
+  // 4. Menentukan path lengkap file yang akan disimpan
+  FullPath := TPath.Combine(FolderPath, AFileName);
+
+  // 5. Menyimpan gambar ke file
+  AImage.Picture.SaveToFile(FullPath);
+
+  //ShowMessage('Gambar berhasil disimpan di: ' + FullPath);
+end;
+
+procedure TForm1.LoadImageToFile(AImage: TImage; const AFileName: string);
+var
+  AppPath, FolderPath, FullPath: string;
+begin
+  // 1. Mendapatkan path direktori aplikasi
+  AppPath := ExtractFilePath(ParamStr(0));
+
+  // 2. Menentukan path folder 'image'
+  FolderPath := TPath.Combine(AppPath, 'image');
+
+  // 3. Membuat folder 'image' jika belum ada
+  if not TDirectory.Exists(FolderPath) then
+    TDirectory.CreateDirectory(FolderPath);
+
+  // 4. Menentukan path lengkap file yang akan disimpan
+  FullPath := TPath.Combine(FolderPath, AFileName);
+
+  // 5. Menyimpan gambar ke file
+  AImage.Picture.SaveToFile(FullPath);
+
+  //ShowMessage('Gambar berhasil disimpan di: ' + FullPath);
 end;
 
 procedure TForm1.Button1Click(Sender: TObject);
@@ -158,9 +207,13 @@ begin
   Button3.Caption     := edPrefix.Text;
   Button3.Notes.Text  := edText.Text;
 
-  DownloadImageFromURL('http://localhost/aaa/index.php?input='+edPrefix.Text, Img1);
+  //http://localhost/aaa/index.php?&radius=20&color=ff5500&width=20&height=20&input='+edPrefix.Text
 
-  Button3.Picture:=img1.Picture;
+  DownloadImageFromURL('http://localhost/aaa/index.php?&radius=20&color=ff5500&width=20&height=20&input='+edPrefix.Text, Img1);
+  SaveImageToFile(Img1, edPrefix.Text+'.jpg');
+  //img1.
+
+  Button3.Picture.LoadFromFile(ExtractFilePath(ParamStr(0))+'/image/'+edPrefix.Text+'.jpg');
 
 end;
 

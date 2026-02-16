@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Test Form 2 Position by Script'
-  ClientHeight = 357
+  ClientHeight = 489
   ClientWidth = 628
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -265,8 +265,8 @@ object Form1: TForm1
   object Button3: TAdvGlowButton
     Left = 263
     Top = 296
-    Width = 145
-    Height = 49
+    Width = 266
+    Height = 121
     Caption = 'Button2'
     NotesFont.Charset = DEFAULT_CHARSET
     NotesFont.Color = clWindowText
