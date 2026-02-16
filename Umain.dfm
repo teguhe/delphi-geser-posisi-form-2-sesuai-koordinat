@@ -92,6 +92,13 @@ object Form1: TForm1
     Height = 105
     Stretch = True
   end
+  object lbl3: TLabel
+    Left = 263
+    Top = 383
+    Width = 66
+    Height = 15
+    Caption = 'Keterangan :'
+  end
   object cbBorderStyle: TComboBox
     Left = 96
     Top = 53
@@ -266,7 +273,7 @@ object Form1: TForm1
     Left = 263
     Top = 296
     Width = 266
-    Height = 121
+    Height = 81
     Caption = 'Button2'
     NotesFont.Charset = DEFAULT_CHARSET
     NotesFont.Color = clWindowText
