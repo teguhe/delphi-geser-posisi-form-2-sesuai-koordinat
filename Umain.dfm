@@ -33,15 +33,15 @@ object Form1: TForm1
     Caption = 'Border Style'
   end
   object Label3: TLabel
-    Left = 288
+    Left = 304
     Top = 56
-    Width = 20
+    Width = 19
     Height = 15
     Caption = 'Top'
     Visible = False
   end
   object Label4: TLabel
-    Left = 288
+    Left = 304
     Top = 83
     Width = 20
     Height = 15
@@ -49,7 +49,7 @@ object Form1: TForm1
     Visible = False
   end
   object Label5: TLabel
-    Left = 288
+    Left = 304
     Top = 110
     Width = 32
     Height = 15
@@ -57,7 +57,7 @@ object Form1: TForm1
     Visible = False
   end
   object Label6: TLabel
-    Left = 288
+    Left = 304
     Top = 137
     Width = 36
     Height = 15
@@ -74,33 +74,40 @@ object Form1: TForm1
   object lbl1: TLabel
     Left = 16
     Top = 240
-    Width = 29
+    Width = 30
     Height = 15
     Caption = 'Prefix'
   end
   object lbl2: TLabel
     Left = 16
     Top = 267
-    Width = 23
+    Width = 22
     Height = 15
     Caption = 'Teks'
   end
   object img1: TImage
-    Left = 448
+    Left = 464
     Top = 150
     Width = 105
     Height = 105
     Stretch = True
   end
   object lbl3: TLabel
-    Left = 263
+    Left = 279
     Top = 383
     Width = 66
     Height = 15
     Caption = 'Keterangan :'
   end
+  object Label8: TLabel
+    Left = 16
+    Top = 213
+    Width = 82
+    Height = 15
+    Caption = 'URL Image App'
+  end
   object cbBorderStyle: TComboBox
-    Left = 96
+    Left = 112
     Top = 53
     Width = 145
     Height = 23
@@ -116,7 +123,7 @@ object Form1: TForm1
       'ToolWindow')
   end
   object edTop: TEdit
-    Left = 368
+    Left = 384
     Top = 53
     Width = 40
     Height = 23
@@ -126,7 +133,7 @@ object Form1: TForm1
     Visible = False
   end
   object edLeft: TEdit
-    Left = 368
+    Left = 384
     Top = 80
     Width = 40
     Height = 23
@@ -136,7 +143,7 @@ object Form1: TForm1
     Visible = False
   end
   object edWidth: TEdit
-    Left = 368
+    Left = 384
     Top = 107
     Width = 40
     Height = 23
@@ -146,7 +153,7 @@ object Form1: TForm1
     Visible = False
   end
   object edHeight: TEdit
-    Left = 368
+    Left = 384
     Top = 134
     Width = 40
     Height = 23
@@ -156,7 +163,7 @@ object Form1: TForm1
     Visible = False
   end
   object cbMonitor: TComboBox
-    Left = 96
+    Left = 112
     Top = 80
     Width = 145
     Height = 23
@@ -168,7 +175,7 @@ object Form1: TForm1
       'Monitor 2')
   end
   object chkMex: TCheckBox
-    Left = 96
+    Left = 112
     Top = 114
     Width = 145
     Height = 17
@@ -178,7 +185,7 @@ object Form1: TForm1
     TabOrder = 6
   end
   object Button1: TAdvGlowButton
-    Left = 96
+    Left = 112
     Top = 137
     Width = 145
     Height = 41
@@ -224,8 +231,8 @@ object Form1: TForm1
     UIStyle = tsOffice2010Blue
   end
   object Button2: TAdvGlowButton
-    Left = 96
-    Top = 296
+    Left = 112
+    Top = 293
     Width = 145
     Height = 49
     Caption = 'Load Text and Image >>'
@@ -270,7 +277,7 @@ object Form1: TForm1
     UIStyle = tsOffice2010Blue
   end
   object Button3: TAdvGlowButton
-    Left = 263
+    Left = 279
     Top = 296
     Width = 266
     Height = 81
@@ -315,7 +322,7 @@ object Form1: TForm1
     UIStyle = tsOffice2010Blue
   end
   object edPrefix: TEdit
-    Left = 96
+    Left = 112
     Top = 237
     Width = 33
     Height = 23
@@ -323,11 +330,26 @@ object Form1: TForm1
     Text = 'DK'
   end
   object edText: TEdit
-    Left = 96
+    Left = 112
     Top = 264
     Width = 312
     Height = 23
     TabOrder = 11
     Text = 'Diskominfo Salatiga'
+  end
+  object edGenerateImageURL: TEdit
+    Left = 112
+    Top = 210
+    Width = 312
+    Height = 23
+    TabOrder = 12
+    Text = 'https://hilarious-gnome-335a3f.netlify.app'
+  end
+  object edGeneratedURL: TEdit
+    Left = 112
+    Top = 412
+    Width = 312
+    Height = 23
+    TabOrder = 13
   end
 end

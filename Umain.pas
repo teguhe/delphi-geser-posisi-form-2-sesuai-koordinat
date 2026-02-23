@@ -37,6 +37,9 @@ type
     edText: TEdit;
     img1: TImage;
     lbl3: TLabel;
+    Label8: TLabel;
+    edGenerateImageURL: TEdit;
+    edGeneratedURL: TEdit;
 
     procedure DownloadImageFromURL(const AURL: string; AImage: TImage);
     procedure SaveImageToFile(AImage: TImage; const AFileName: string);
@@ -196,8 +199,9 @@ begin
 //    lbl3.Caption:='File Already Exist';
 //  end
 //  else
-//  begin
-    DownloadImageFromURL('http://localhost/php-generate-image-from-alphabet/index.php?&input='+edPrefix.Text+'&radius=40&color=ff5500&Width=64&Height=64', Img1);
+//  begin                                                //php-generate-image-from-alphabet
+    edGeneratedURL.Text:=edGenerateImageURL.Text+'/?&input='+edPrefix.Text+'&radius=40&color=ff5500&Width=64&Height=64';
+    DownloadImageFromURL(edGenerateImageURL.Text+'/?&input='+edPrefix.Text+'&radius=40&color=ff5500&Width=64&Height=64', Img1);
     SaveImageToFile(Img1, edPrefix.Text+'.jpg');
     Button3.Picture.LoadFromFile(ImageName);
     lbl3.Caption:='File Generated From URL';
